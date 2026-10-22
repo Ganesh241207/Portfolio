@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Interests &amp; AI Tech Exploration Icon">
+  <defs>
+    <!-- Core radial gradient -->
+    <radialGradient id="coreRadial" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#3DFF9A" />
+      <stop offset="70%" stop-color="#1E90FF" />
+      <stop offset="100%" stop-color="#0a192f" />
+    </radialGradient>
+    <!-- Ring 1 linear gradient -->
+    <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3DFF9A" />
+      <stop offset="50%" stop-color="#2D7BFF" />
+      <stop offset="100%" stop-color="#3DFF9A" />
+    </linearGradient>
+    <!-- Ring 2 linear gradient -->
+    <linearGradient id="ringGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D7BFF" />
+      <stop offset="60%" stop-color="#3DFF9A" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+    <!-- Intense glow filter -->
+    <filter id="interestGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient background glow aura -->
+  <circle cx="32" cy="32" r="22" fill="#3DFF9A" fill-opacity="0.12" filter="url(#interestGlow)"/>
+
+  <!-- Orbital Ring 1: Angled 35deg Ellipse -->
+  <g transform="rotate(35 32 32)">
+    <ellipse cx="32" cy="32" rx="27" ry="10" stroke="url(#ringGrad1)" stroke-width="2.2" stroke-dasharray="80 12" stroke-linecap="round"/>
+    <!-- Satellite node 1 on Ring 1 -->
+    <circle cx="59" cy="32" r="3.2" fill="#3DFF9A" filter="url(#interestGlow)"/>
+    <circle cx="59" cy="32" r="1.4" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Orbital Ring 2: Angled -40deg Ellipse -->
+  <g transform="rotate(-40 32 32)">
+    <ellipse cx="32" cy="32" rx="26" ry="9.5" stroke="url(#ringGrad2)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Satellite node 2 on Ring 2 -->
+    <circle cx="7" cy="32" r="2.8" fill="#2D7BFF" filter="url(#interestGlow)"/>
+    <circle cx="7" cy="32" r="1.2" fill="#FFFFFF"/>
+    <!-- Secondary mini node -->
+    <circle cx="50" cy="38" r="2" fill="#3DFF9A"/>
+  </g>
+
+  <!-- Vertical Axis Meridian Ring -->
+  <ellipse cx="32" cy="32" rx="13" ry="26" stroke="#253549" stroke-width="1.2" stroke-dasharray="4 4" stroke-opacity="0.7"/>
+
+  <!-- Central Glowing Quantum Neural Core Sphere -->
+  <circle cx="32" cy="32" r="12" fill="url(#coreRadial)" stroke="#3DFF9A" stroke-width="1.2" filter="url(#interestGlow)"/>
+  <!-- Specular 3D Reflection Arc on Core -->
+  <path d="M26 25 C28 22, 34 22, 37 25" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.85"/>
+
+  <!-- Tech Sparkle Stars -->
+  <path d="M12 14 L13.5 17.5 L17 19 L13.5 20.5 L12 24 L10.5 20.5 L7 19 L10.5 17.5 Z" fill="#3DFF9A" fill-opacity="0.8"/>
+  <path d="M52 46 L53 48.5 L55.5 49.5 L53 50.5 L52 53 L51 50.5 L48.5 49.5 L51 48.5 Z" fill="#2D7BFF" fill-opacity="0.9"/>
+</svg>

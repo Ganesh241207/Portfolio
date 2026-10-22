@@ -1,0 +1,279 @@
+/**
+ * ====================================================================
+ * BASE & RESET STYLES - GANESH S PORTFOLIO
+ * ====================================================================
+ * Modern zero-compromise CSS reset, ambient canvas/grid surfaces,
+ * SVG noise texture, fluid typographic primitives, and accessibility hooks.
+ */
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: auto; /* Managed via Lenis/smooth-scroll script */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--leading-normal);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* When custom cursor is active on fine pointers */
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor select {
+    cursor: none !important;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+}
+
+@layer base {
+  /* ------------------------------------------------------------------
+     1. AMBIENT BACKGROUND SURFACES & NOISE
+     ------------------------------------------------------------------ */
+  /* Static un-animated SVG noise overlay (rendered once via data URI) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-noise);
+    pointer-events: none;
+    opacity: 0.024;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Subtle background grid with slow parallax offset */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-size: 64px 64px;
+    background-image: 
+      linear-gradient(to right, color-mix(in oklch, var(--color-surface-3-oklch) 25%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--color-surface-3-oklch) 25%, transparent) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 30%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 30%, transparent 85%);
+  }
+
+  /* ------------------------------------------------------------------
+     2. ACCESSIBILITY & FOCUS STATES
+     ------------------------------------------------------------------ */
+  /* Skip Link */
+  .skip-to-content {
+    position: fixed;
+    top: var(--space-xs);
+    left: var(--space-xs);
+    z-index: var(--z-cursor);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-surface-2);
+    color: var(--color-accent-green);
+    border: 1px solid var(--color-accent-green);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-sm);
+    font-weight: 600;
+    transform: translateY(-160%);
+    transition: transform var(--dur-fast) var(--ease-out-expo);
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
+    outline: 2px solid var(--color-accent-green);
+    outline-offset: 4px;
+  }
+
+  /* Global Keyboard Focus Ring (High-Contrast Neon Green) */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-green);
+    outline-offset: 3px;
+  }
+
+  /* High-fidelity selection */
+  ::selection {
+    background-color: color-mix(in oklch, var(--color-accent-green-oklch) 30%, transparent);
+    color: #ffffff;
+  }
+
+  /* Screen-reader utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ------------------------------------------------------------------
+     3. TYPOGRAPHY SYSTEM
+     ------------------------------------------------------------------ */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-text-primary);
+    font-weight: 700;
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+    text-wrap: balance;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  /* Eyebrows / Technical labels */
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-accent-green);
+    margin-block-end: var(--space-xs);
+  }
+
+  .section-eyebrow::before {
+    content: "//";
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  /* Section Title with Tight Tracking */
+  .section-title {
+    font-size: var(--text-display);
+    letter-spacing: var(--tracking-tighter);
+    margin-block-end: var(--space-sm);
+    font-weight: 800;
+  }
+
+  .section-subtitle {
+    font-size: var(--text-body-lg);
+    color: var(--color-text-secondary);
+    max-width: 68ch;
+    margin-block-end: var(--space-lg);
+  }
+
+  /* Accent Text Highlight */
+  .text-accent-green {
+    color: var(--color-accent-green);
+  }
+
+  .text-accent-blue {
+    color: var(--color-accent-blue);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  /* ------------------------------------------------------------------
+     4. CONTAINERS & STRUCTURE
+     ------------------------------------------------------------------ */
+  .site-wrapper {
+    position: relative;
+    z-index: var(--z-content);
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--content-gutter);
+  }
+
+  .container-narrow {
+    width: 100%;
+    max-width: var(--content-narrow-width);
+    margin-inline: auto;
+    padding-inline: var(--content-gutter);
+  }
+
+  .section-padding {
+    padding-block: var(--space-2xl);
+    position: relative;
+  }
+
+  /* Sticky section narrative indicator on left side */
+  .section-narrative-header {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: var(--space-lg);
+  }
+}

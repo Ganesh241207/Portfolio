@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Education Academic Icon">
+  <defs>
+    <!-- Cap top gradient -->
+    <linearGradient id="capTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a3240" />
+      <stop offset="50%" stop-color="#19202c" />
+      <stop offset="100%" stop-color="#0f141d" />
+    </linearGradient>
+    <!-- Cap bevel gradient -->
+    <linearGradient id="capBevelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141923" />
+      <stop offset="100%" stop-color="#090c10" />
+    </linearGradient>
+    <!-- Scroll gradient -->
+    <linearGradient id="scrollGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4F6F8" />
+      <stop offset="70%" stop-color="#d1d7e0" />
+      <stop offset="100%" stop-color="#9aa5b5" />
+    </linearGradient>
+    <!-- Neon green accent -->
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#55FFA9" />
+      <stop offset="100%" stop-color="#20e07f" />
+    </linearGradient>
+    <!-- Drop shadow filter -->
+    <filter id="eduGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#3DFF9A" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Diploma Scroll in Background -->
+  <g transform="translate(6, 36) rotate(-14)">
+    <rect x="0" y="4" width="34" height="11" rx="3" fill="url(#scrollGrad)" stroke="#4a5568" stroke-width="0.8"/>
+    <!-- Scroll curl edge -->
+    <path d="M0 4 C2 4, 3 8, 3 11 C3 14, 2 15, 0 15 Z" fill="#b0b9c6"/>
+    <path d="M34 4 C32 4, 31 8, 31 11 C31 14, 32 15, 34 15 Z" fill="#ffffff"/>
+    <!-- Red/Green ribbon tie -->
+    <rect x="15" y="3" width="4" height="13" rx="1.5" fill="url(#accentGlow)" filter="url(#eduGlow)"/>
+    <path d="M17 16 L14 22 M17 16 L20 21" stroke="#3DFF9A" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Skull cap base -->
+  <path d="M22 28 C22 36, 42 36, 42 28 C42 25, 22 25, 22 28 Z" fill="url(#capBevelGrad)" stroke="#3DFF9A" stroke-width="0.8" stroke-opacity="0.4"/>
+  <path d="M20 28 C20 38, 44 38, 44 28" fill="none" stroke="#1c2430" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Mortarboard Diamond Top Surface (3D isometric tilt) -->
+  <path d="M32 9 L58 21 L32 33 L6 21 Z" fill="url(#capTopGrad)" stroke="#3a4556" stroke-width="1.2"/>
+  <!-- Specular top ridge highlight -->
+  <path d="M32 9 L58 21 L32 23 L6 21 Z" fill="#ffffff" fill-opacity="0.08"/>
+  <!-- Lower Bevel Thickness -->
+  <path d="M6 21 L32 33 L32 36 L6 24 Z" fill="#0b0e14"/>
+  <path d="M58 21 L32 33 L32 36 L58 24 Z" fill="#141a24"/>
+
+  <!-- Central Button Pivot -->
+  <ellipse cx="32" cy="21" rx="3.2" ry="2.2" fill="url(#accentGlow)" filter="url(#eduGlow)"/>
+
+  <!-- Flowing Silk Tassel Ribbon -->
+  <path d="M32 21 C37 21, 46 24, 48 30 C50 35, 49 42, 50 48" fill="none" stroke="url(#accentGlow)" stroke-width="2" stroke-linecap="round" filter="url(#eduGlow)"/>
+  <!-- Tassel Fringe Ring & Tail -->
+  <circle cx="50" cy="48" r="2.2" fill="#3DFF9A"/>
+  <path d="M47 50 L48 58 M50 50 L50 60 M53 50 L52 58" stroke="#3DFF9A" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

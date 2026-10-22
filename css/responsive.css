@@ -1,0 +1,204 @@
+/**
+ * ====================================================================
+ * RESPONSIVE & ACCESSIBILITY STYLES - GANESH S PORTFOLIO
+ * ====================================================================
+ * Breakpoint refinements, container query adaptations, touch ergonomics,
+ * and comprehensive prefers-reduced-motion overrides.
+ */
+
+@layer responsive {
+  /* ------------------------------------------------------------------
+     1. TABLET BREAKPOINTS (< 1024px)
+     ------------------------------------------------------------------ */
+  @media (max-width: 1024px) {
+    .site-header {
+      padding-block: var(--space-2xs);
+    }
+
+    .projects-grid {
+      gap: var(--space-md);
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     2. MOBILE BREAKPOINTS (< 768px)
+     ------------------------------------------------------------------ */
+  @media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+      display: none;
+    }
+
+    .availability-pill {
+      display: none; /* Relocated or streamlined for mobile screen real estate */
+    }
+
+    .mobile-menu-btn {
+      display: inline-flex;
+    }
+
+    /* Hero adjustments */
+    .hero-section {
+      min-height: 100svh;
+      padding-block-start: calc(var(--space-2xl) + 20px);
+      text-align: left;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      min-height: 48px;
+    }
+
+    /* About Section */
+    .about-editorial-grid {
+      grid-template-columns: 1fr !important;
+      gap: var(--space-lg) !important;
+    }
+
+    .profile-frame-wrap {
+      max-width: 320px;
+    }
+
+    /* Skills Grid */
+    .skills-grid-4 {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    /* Project Cards */
+    .project-card-wrap {
+      grid-column: span 12 !important;
+    }
+
+    .project-visual {
+      height: 190px;
+    }
+
+    /* Timeline */
+    .timeline {
+      padding-inline-start: var(--space-sm);
+    }
+
+    .timeline-marker {
+      left: calc(var(--space-sm) * -1 + 1px);
+    }
+
+    /* Modal */
+    .modal-dialog {
+      padding: var(--space-md);
+      max-height: 92vh;
+    }
+
+    /* Floating Back to Top Button */
+    .back-to-top {
+      bottom: var(--space-sm);
+      right: var(--space-sm);
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     3. CONTAINER QUERY ADAPTATIONS
+     ------------------------------------------------------------------ */
+  @container (max-width: 380px) {
+    .project-title {
+      font-size: var(--text-h3);
+    }
+
+    .project-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     4. TOUCH DEVICES & COARSE POINTERS
+     ------------------------------------------------------------------ */
+  @media (pointer: coarse), (hover: none) {
+    /* Hide custom cursor elements unconditionally on touch devices */
+    .cursor-host,
+    .cursor-glyph,
+    .cursor-trail-item {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+    /* Ensure native cursor behavior */
+    body,
+    body.has-custom-cursor,
+    a,
+    button,
+    input,
+    textarea,
+    select {
+      cursor: auto !important;
+    }
+
+    /* Interactive touch targets >= 44px */
+    .btn,
+    .mobile-menu-btn,
+    .nav-link,
+    .contact-direct-card {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     5. PREFERS-REDUCED-MOTION (Accessibility Standard)
+     ------------------------------------------------------------------ */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Disable directional blur filters */
+    .reveal-word-inner,
+    .reveal-on-scroll,
+    .project-visual svg,
+    .view-fade-entry {
+      filter: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Disable floating logo continuous motion */
+    .floating-logo-img,
+    .logo-shadow,
+    .info-floating-img,
+    .info-floating-shadow {
+      animation: none !important;
+      transform: none !important;
+    }
+
+    /* Disable custom cursor lag and trail */
+    .cursor-trail-item {
+      display: none !important;
+    }
+
+    .cursor-glyph {
+      text-shadow: none !important;
+    }
+
+    .hero-scroll-cue {
+      animation: none !important;
+    }
+
+    .pulsing-dot::after {
+      animation: none !important;
+    }
+  }
+}

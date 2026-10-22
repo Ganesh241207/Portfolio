@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Ganesh S — Software Developer & Future AI Engineer | Premium Portfolio</title>
+  <meta name="description" content="Portfolio of Ganesh S, Computer Science Engineering student, aspiring software developer, and future AI engineer. Explore featured systems, algorithms, and technical capabilities.">
+  <meta name="theme-color" content="#050607">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ganesh S — Developer Portfolio">
+  <meta property="og:description" content="Studio-quality portfolio of Ganesh S: Computer Science student, aspiring software engineer, and future AI developer.">
+  <meta property="og:image" content="assets/images/og-preview.png">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700;800&family=Oswald:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Token-Driven CSS Design System -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Keyboard Accessibility: Skip to Content -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ================================================================
+       NAVIGATION BAR
+       ================================================================ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Primary navigation">
+        <!-- Monogram Logo -->
+        <a href="#home" class="site-logo" aria-label="Ganesh S Portfolio Home" data-cursor-label="HOME">
+          <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Hexagonal stylized frame -->
+            <polygon points="22,3 39,12 39,32 22,41 5,32 5,12" stroke="#1c2027" stroke-width="2"/>
+            <!-- 'G' glyph path -->
+            <path class="logo-path-base" d="M19 15H14C11.5 15 10 17 10 20V24C10 27 11.5 29 14 29H19V22H15.5" />
+            <!-- 'S' glyph path with drawing accent -->
+            <path class="logo-path-accent" d="M25 16C25 14.5 26.5 13.5 29 13.5H30.5C32.5 13.5 34 15 34 17C34 19 32.5 20.5 30 21L28 22C25.5 22.5 24 24 24 26C24 28 25.5 29.5 28 29.5H31C33 29.5 34 28.5 34 27" />
+          </svg>
+          <div class="logo-text">
+            <span class="logo-name">GANESH S</span>
+            <span class="logo-sub">STUDIO // CS ENG</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="nav-menu" role="list">
+          <li><a href="#home" class="nav-link is-active" data-cursor-label="HOME">Home</a></li>
+          <li><a href="#about" class="nav-link" data-cursor-label="ABOUT">About</a></li>
+          <li><a href="#skills" class="nav-link" data-cursor-label="SKILLS">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-cursor-label="WORK">Projects</a></li>
+          <li><a href="#contact" class="nav-link" data-cursor-label="TALK">Contact</a></li>
+        </ul>
+
+        <!-- Availability Badge -->
+        <div class="availability-pill" aria-label="Status: Available for opportunities">
+          <span class="pulsing-dot" aria-hidden="true"></span>
+          <span class="dynamic-availability">AVAILABLE FOR INTERNSHIPS</span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+          <span class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Navigation Overlay -->
+  <div id="mobile-nav" class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#home" class="mobile-nav-link">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div style="margin-block-start: var(--space-xl); text-align: center;">
+      <span class="section-eyebrow">GANESH S // PORTFOLIO</span>
+    </div>
+  </div>
+
+  <main id="main-content" class="site-wrapper">
+    <!-- ================================================================
+         CINEMATIC HERO SECTION
+         ================================================================ -->
+    <section id="home" class="hero-section section-padding" style="min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; position: relative;" aria-label="Introduction">
+      <!-- 3D Wireframe Particle Canvas -->
+      <div style="position: absolute; inset: 0; pointer-events: none; z-index: var(--z-canvas); overflow: hidden;">
+        <canvas id="hero-canvas" style="width: 100%; height: 100%; display: block;" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="container" style="position: relative; z-index: var(--z-content);">
+        <div style="max-width: 960px;">
+          <!-- Availability Tag -->
+          <div class="hero-badge-wrap" style="margin-block-end: var(--space-sm);">
+            <div class="availability-pill" style="display: inline-flex;">
+              <span class="pulsing-dot" aria-hidden="true"></span>
+              <span class="dynamic-availability">AVAILABLE FOR OPPORTUNITIES</span>
+            </div>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="hero-title" style="font-size: clamp(2.4rem, 5.2vw, 3.8rem); font-weight: 800; line-height: 1.15; letter-spacing: var(--tracking-tight); margin-block-end: var(--space-sm); color: var(--color-text-primary);">
+            Hi, I’m <span style="color: var(--color-accent-green);">Ganesh</span>
+          </h1>
+
+          <!-- Verbatim Pitch -->
+          <div class="hero-bio" style="margin-block-end: var(--space-lg); max-width: 68ch;">
+            <p style="font-size: var(--text-body); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+              Computer Science Engineering student passionate about software engineering, responsive web architectures, and artificial intelligence. Dedicated to building reliable, high-performance applications that solve real-world problems.
+            </p>
+          </div>
+
+          <!-- CTA Buttons with Magnetic Hover -->
+          <div class="hero-actions" style="display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center;">
+            <a href="#projects" class="btn btn-primary" data-magnetic data-cursor-label="EXPLORE">
+              <span>Explore My Work</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary" data-magnetic data-cursor-label="CONTACT">
+              <span>Contact Me</span>
+              <svg class="btn-icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Cue with Animated Down Arrow -->
+      <div class="hero-scroll-cue" style="position: absolute; bottom: var(--space-md); left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; pointer-events: none; z-index: var(--z-content);" aria-hidden="true">
+        <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--color-text-muted); text-transform: uppercase;">
+          SCROLL TO EXPLORE
+        </span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         ABOUT SECTION
+         ================================================================ -->
+    <section id="about" class="section-padding" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-narrative-header reveal-on-scroll">
+          <span class="section-eyebrow">01 ABOUT</span>
+          <h2 id="about-heading" class="section-title">ENGINEERING MINDSET &amp; IDENTITY</h2>
+          <p class="section-subtitle">
+            A grounded dedication to solid computer science fundamentals, modular software architecture, and the future of intelligent systems.
+          </p>
+        </div>
+
+        <!-- Editorial Grid: Bio & Visual Frame -->
+        <div class="about-editorial-grid reveal-on-scroll stagger-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; margin-block-end: var(--space-xl);">
+          <!-- Bio Column -->
+          <div>
+            <!-- Verbatim Quotation as Requested -->
+            <blockquote class="glass-card" style="margin-block-end: var(--space-md); border-left: 3px solid var(--color-accent-green); padding: var(--space-md);">
+              <p style="font-size: var(--text-body-lg); color: var(--color-text-primary); line-height: 1.6; font-style: normal; font-weight: 500;">
+                “Hi, I’m Ganesh S, a Computer Science Engineering student passionate about programming, web development, problem-solving, and artificial intelligence. I enjoy learning new technologies and building practical projects that solve real-world problems.”
+              </p>
+            </blockquote>
+
+            <p style="font-size: var(--text-body); color: var(--color-text-secondary); line-height: var(--leading-relaxed); margin-block-end: var(--space-sm);">
+              My approach to engineering blends rigor with craftsmanship. Whether mapping out dynamic memory trees in C, designing object-oriented hierarchies in Java, or writing responsive design systems in modern CSS, I focus on clean structure, predictability, and user ergonomics.
+            </p>
+
+            <p style="font-size: var(--text-body); color: var(--color-text-secondary); line-height: var(--leading-relaxed);">
+              As I look toward the intersection of modern software engineering and artificial intelligence, my goal is to engineer resilient tools and data pipelines that bridge complex computation with effortless human interaction.
+            </p>
+          </div>
+
+          <!-- Profile Frame with Smooth Avengers Hover Reveal -->
+          <div class="profile-frame-wrap">
+            <div class="profile-frame" data-cursor-label="GANESH" tabindex="0" role="img" aria-label="Ganesh S — Computer Science Engineering Student portrait">
+              <div class="profile-frame-corners" aria-hidden="true"></div>
+              <div class="profile-avatar-inner">
+                <!-- Studio Portrait with Dark Background -->
+                <img src="assets/images/profile.jpg" alt="Ganesh S — Computer Science Engineering Student" class="profile-photo" width="400" height="500" onload="this.style.opacity='1';" onerror="this.style.display='none'; const ph = this.nextElementSibling; if (ph) ph.style.display='flex';">
+                
+                <!-- Fallback High-Tech Biometric Graphic Placeholder if image missing -->
+                <div class="profile-placeholder-graphic" style="display: none;">
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="50" cy="50" r="44" stroke="#252b34" stroke-width="1.5"/>
+                    <circle cx="50" cy="50" r="36" stroke="#3DFF9A" stroke-width="1.5" stroke-dasharray="6 4"/>
+                    <circle cx="50" cy="38" r="14" fill="#14171c" stroke="#3DFF9A" stroke-width="2"/>
+                    <path d="M26 78 C26 62 36 56 50 56 C64 56 74 62 74 78" fill="#14171c" stroke="#3DFF9A" stroke-width="2"/>
+                    <circle cx="50" cy="38" r="4" fill="#3DFF9A"/>
+                  </svg>
+                  <span style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #F4F6F8;">GANESH S</span>
+                  <span style="font-family: var(--font-mono); font-size: var(--text-mono-xs); color: var(--color-accent-green); margin-block-start: 4px;">// CSE UNDERGRADUATE</span>
+                </div>
+
+                <!-- Smooth Avengers Movie Title Reveal Overlay -->
+                <div class="profile-name-overlay" aria-hidden="true">
+                  <div class="profile-name-card">
+                    <div class="avengers-title-wrapper">
+                      <span class="avengers-title-text" data-text="GANESH">
+                        <span class="avengers-char">G</span><span class="avengers-char avengers-arrow-a">A</span><span class="avengers-char">N</span><span class="avengers-char">E</span><span class="avengers-char">S</span><span class="avengers-char">H</span>
+                      </span>
+                    </div>
+                    <div class="avengers-energy-line"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Three Authentic Information Cards -->
+        <div class="info-cards-grid">
+          <!-- Card 1: Education -->
+          <div class="glass-card info-card reveal-on-scroll stagger-1">
+            <div class="info-card-header">
+              <div class="info-floating-icon-wrap" style="--float-dur: 4.8s; --float-delay: 0s; --float-dist: 6px; --float-rot: 1.2deg;">
+                <img src="assets/icons/about/education.svg" alt="Education academic cap icon" class="info-floating-img" width="46" height="46" loading="lazy">
+                <div class="info-floating-shadow" aria-hidden="true"></div>
+              </div>
+              <div class="info-card-title-group">
+                <span class="info-card-badge">ACADEMIC FOUNDATION</span>
+                <h3 class="info-card-title">Education</h3>
+              </div>
+            </div>
+            <p class="info-card-body">
+              <strong>B.E. in Computer Science &amp; Engineering</strong><br>
+              <span class="text-muted">Anna University Affiliated College (2025 — Present)</span>
+            </p>
+            <div class="info-list">
+              <span class="info-list-item">Data Structures &amp; Algorithmic Analysis</span>
+              <span class="info-list-item">Object-Oriented Programming (Java / C++)</span>
+              <span class="info-list-item">Database Management &amp; SQL Architectures</span>
+              <span class="info-list-item">Operating Systems &amp; Computer Networks</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Interests -->
+          <div class="glass-card info-card reveal-on-scroll stagger-2">
+            <div class="info-card-header">
+              <div class="info-floating-icon-wrap" style="--float-dur: 5.4s; --float-delay: -1.6s; --float-dist: 7px; --float-rot: -1.4deg;">
+                <img src="assets/icons/about/interests.svg" alt="Interests tech exploration icon" class="info-floating-img" width="46" height="46" loading="lazy">
+                <div class="info-floating-shadow" aria-hidden="true"></div>
+              </div>
+              <div class="info-card-title-group">
+                <span class="info-card-badge">EXPLORATION &amp; CRAFT</span>
+                <h3 class="info-card-title">Interests</h3>
+              </div>
+            </div>
+            <p class="info-card-body">
+              Focus areas where passion and technical curiosity converge:
+            </p>
+            <div class="info-list">
+              <span class="info-list-item">Full-Stack Web Development &amp; Modern UI</span>
+              <span class="info-list-item">Applied AI &amp; Machine Learning Pipelines</span>
+              <span class="info-list-item">Data Structure Optimization &amp; Pointer Mechanics</span>
+              <span class="info-list-item">Creative Frontend Craft &amp; Micro-interactions</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Career Goals -->
+          <div class="glass-card info-card reveal-on-scroll stagger-3">
+            <div class="info-card-header">
+              <div class="info-floating-icon-wrap" style="--float-dur: 5.0s; --float-delay: -0.8s; --float-dist: 6px; --float-rot: 1.5deg;">
+                <img src="assets/icons/about/career-goals.svg" alt="Career Goals rocket propulsion icon" class="info-floating-img" width="46" height="46" loading="lazy">
+                <div class="info-floating-shadow" aria-hidden="true"></div>
+              </div>
+              <div class="info-card-title-group">
+                <span class="info-card-badge">FUTURE TRAJECTORY</span>
+                <h3 class="info-card-title">Career Goals</h3>
+              </div>
+            </div>
+            <p class="info-card-body">
+              Long-term trajectory as an aspiring software engineer:
+            </p>
+            <div class="info-list">
+              <span class="info-list-item">Develop scalable, fault-tolerant software products</span>
+              <span class="info-list-item">Transition into an AI Engineer solving practical problems</span>
+              <span class="info-list-item">Collaborate in high-performing engineering teams</span>
+              <span class="info-list-item">Contribute continuously to open-source software</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical Authentic Journey Timeline -->
+        <div style="margin-block-start: var(--space-2xl);">
+          <div class="reveal-on-scroll">
+            <span class="section-eyebrow">CHRONICLE</span>
+            <h3 style="font-size: var(--text-h2); font-weight: 700; margin-block-end: var(--space-xs);">Academic &amp; Technical Milestones</h3>
+            <p style="font-size: var(--text-small); color: var(--color-text-secondary); max-width: 60ch;">
+              Authentic milestones reflecting foundational growth, conceptual mastery, and ongoing engineering projects.
+            </p>
+          </div>
+
+          <div id="journey-timeline" class="timeline">
+            <!-- Populated via js/main.js from js/config.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SKILLS SECTION
+         ================================================================ -->
+    <section id="skills" class="section-padding skills-section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-narrative-header reveal-on-scroll">
+          <span class="section-eyebrow">02 CAPABILITIES</span>
+          <h2 id="skills-heading" class="section-title">TECHNICAL REPERTOIRE &amp; CRAFT</h2>
+          <p class="section-subtitle">
+            Core competencies cultivated through academic coursework, self-directed exploration, and practical project builds. No arbitrary percentages or inflated claims—just clear capabilities.
+          </p>
+        </div>
+
+        <!-- Modern 4-Card Skills Grid with Floating Real-World Logos -->
+        <div class="skills-grid-4">
+          <!-- Card 1: Frontend Development -->
+          <article class="skill-card-modern reveal-on-scroll stagger-1" aria-labelledby="skill-title-frontend">
+            <div class="skill-card-top">
+              <div class="skill-logos-stage" aria-label="Frontend technology logos cluster">
+                <div class="floating-logo-item" style="--float-dur: 4.8s; --float-delay: 0s; --float-dist: 8px; --float-rot: 1.5deg;">
+                  <img src="assets/icons/skills/html5.svg" alt="HTML5 logo" class="floating-logo-img" width="52" height="52" loading="lazy">
+                  <div class="logo-shadow" aria-hidden="true"></div>
+                </div>
+                <div class="floating-logo-item" style="--float-dur: 5.4s; --float-delay: -1.8s; --float-dist: 9px; --float-rot: -1.5deg;">
+                  <img src="assets/icons/skills/css3.svg" alt="CSS3 logo" class="floating-logo-img" width="52" height="52" loading="lazy">
+                  <div class="logo-shadow" aria-hidden="true"></div>
+                </div>
+                <div class="floating-logo-item" style="--float-dur: 4.2s; --float-delay: -0.9s; --float-dist: 7px; --float-rot: 1deg;">
+                  <img src="assets/icons/skills/javascript.svg" alt="JavaScript logo" class="floating-logo-img" width="52" height="52" loading="lazy">
+                  <div class="logo-shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="skill-card-meta">
+                <h3 id="skill-title-frontend" class="skill-card-title">Frontend Development</h3>
+                <p class="skill-card-sub">HTML5 · CSS3 · JavaScript</p>
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <p class="skill-card-desc">Build responsive, interactive websites using semantic HTML, modern CSS layouts, and JavaScript for dynamic user experiences.</p>
+              <div class="skill-card-tags" aria-label="Frontend skill tags">
+                <span class="skill-pill">Semantic HTML</span>
+                <span class="skill-pill">Responsive CSS</span>
+                <span class="skill-pill">DOM Manipulation</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Java Development -->
+          <article class="skill-card-modern reveal-on-scroll stagger-2" aria-labelledby="skill-title-java">
+            <div class="skill-card-top">
+              <div class="skill-logos-stage" aria-label="Java technology logo">
+                <div class="floating-logo-item" style="--float-dur: 5.6s; --float-delay: -0.5s; --float-dist: 10px; --float-rot: -1.8deg;">
+                  <img src="assets/icons/skills/java.svg" alt="Java logo" class="floating-logo-img" width="56" height="56" loading="lazy">
+                  <div class="logo-shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="skill-card-meta">
+                <h3 id="skill-title-java" class="skill-card-title">Java Development</h3>
+                <p class="skill-card-sub">Java</p>
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <p class="skill-card-desc">Develop object-oriented programs using classes, objects, inheritance, methods, and problem-solving logic.</p>
+              <div class="skill-card-tags" aria-label="Java skill tags">
+                <span class="skill-pill">OOP</span>
+                <span class="skill-pill">Data Structures</span>
+                <span class="skill-pill">Problem Solving</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Python Programming -->
+          <article class="skill-card-modern reveal-on-scroll stagger-3" aria-labelledby="skill-title-python">
+            <div class="skill-card-top">
+              <div class="skill-logos-stage" aria-label="Python technology logo">
+                <div class="floating-logo-item" style="--float-dur: 4.9s; --float-delay: -2.3s; --float-dist: 8px; --float-rot: 1.6deg;">
+                  <img src="assets/icons/skills/python.svg" alt="Python logo" class="floating-logo-img" width="56" height="56" loading="lazy">
+                  <div class="logo-shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="skill-card-meta">
+                <h3 id="skill-title-python" class="skill-card-title">Python Programming</h3>
+                <p class="skill-card-sub">Python</p>
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <p class="skill-card-desc">Write readable Python programs for automation, data processing, and developing programming logic.</p>
+              <div class="skill-card-tags" aria-label="Python skill tags">
+                <span class="skill-pill">Programming Fundamentals</span>
+                <span class="skill-pill">Automation</span>
+                <span class="skill-pill">Data Handling</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: UI/UX Design -->
+          <article class="skill-card-modern reveal-on-scroll stagger-4" aria-labelledby="skill-title-uiux">
+            <div class="skill-card-top">
+              <div class="skill-logos-stage" aria-label="Figma UI/UX design logo">
+                <div class="floating-logo-item" style="--float-dur: 5.1s; --float-delay: -1.4s; --float-dist: 9px; --float-rot: -1.4deg;">
+                  <img src="assets/icons/skills/figma.svg" alt="Figma logo" class="floating-logo-img" width="52" height="52" loading="lazy">
+                  <div class="logo-shadow" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="skill-card-meta">
+                <h3 id="skill-title-uiux" class="skill-card-title">UI/UX Design</h3>
+                <p class="skill-card-sub">UI/UX Design</p>
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <p class="skill-card-desc">Design intuitive, user-friendly interfaces with clear layouts, consistent typography, visual hierarchy, and responsive design principles.</p>
+              <div class="skill-card-tags" aria-label="UI/UX skill tags">
+                <span class="skill-pill">Wireframing</span>
+                <span class="skill-pill">Visual Hierarchy</span>
+                <span class="skill-pill">Usability</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PROJECTS SECTION
+         ================================================================ -->
+    <section id="projects" class="section-padding" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-narrative-header reveal-on-scroll">
+          <span class="section-eyebrow">03 SELECTED WORK</span>
+          <h2 id="projects-heading" class="section-title">FEATURED ARCHITECTURES &amp; SYSTEMS</h2>
+          <p class="section-subtitle">
+            Authentic software projects spanning data structures, web utilities, object-oriented systems, and future AI blueprints. Click any card to inspect full technical specifications.
+          </p>
+        </div>
+
+        <!-- Dynamic Projects Grid (Populated from js/projects.js) -->
+        <div id="projects-list" class="projects-grid">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CONTACT SECTION
+         ================================================================ -->
+    <section id="contact" class="section-padding" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-narrative-header reveal-on-scroll">
+          <span class="section-eyebrow">04 INITIATE DIALOGUE</span>
+          <h2 id="contact-heading" class="section-title">HAVE A PROJECT IN MIND?</h2>
+          <p class="section-subtitle">
+            I’m actively seeking software engineering internships, open-source collaborations, and technical mentorship. Reach out via the channels below.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Direct Channels Column -->
+          <div class="contact-channels-col reveal-on-scroll stagger-1">
+            <h3 style="font-size: var(--text-h3); margin-block-end: var(--space-sm); font-weight: 700;">Direct Contact Channels</h3>
+
+            <!-- Email Card -->
+            <a href="mailto:ganeshsakthivel20072007@gmail.com" class="contact-direct-card dynamic-email-link" data-cursor-label="EMAIL">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-card-label">Electronic Mail</span>
+                <span class="contact-card-val dynamic-email-text">ganeshsakthivel20072007@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com/Ganesh241207" target="_blank" rel="noopener noreferrer" class="contact-direct-card dynamic-github-link" data-cursor-label="GITHUB">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-card-label">Source Code Repositories</span>
+                <span class="contact-card-val dynamic-github-text">github.com/Ganesh241207</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn Card -->
+            <a href="https://www.linkedin.com/in/ganesh-s-661248424/" target="_blank" rel="noopener noreferrer" class="contact-direct-card dynamic-linkedin-link" data-cursor-label="LINKEDIN">
+              <div class="contact-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-card-label">Professional Network</span>
+                <span class="contact-card-val dynamic-linkedin-text">linkedin.com/in/ganesh-s-661248424/</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Interactive Contact Form Column -->
+          <div class="contact-form-col reveal-on-scroll stagger-2">
+            <div class="contact-form-panel">
+              <!-- Clear Demonstration Disclaimer Banner -->
+              <div class="form-demo-banner" role="status">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>
+                  <strong>Client-Side Demonstration:</strong> This form validates inputs in-browser and simulates transmission. For direct inquiries, please use the email link provided.
+                </span>
+              </div>
+
+              <form id="contact-form" novalidate aria-label="Contact submission form">
+                <div class="form-group">
+                  <label for="form-name" class="form-label">
+                    <span>Your Full Name</span>
+                    <span style="color: var(--color-accent-green);">*</span>
+                  </label>
+                  <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Morgan" required aria-required="true" aria-describedby="form-name-error">
+                  <span id="form-name-error" class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email" class="form-label">
+                    <span>Email Address</span>
+                    <span style="color: var(--color-accent-green);">*</span>
+                  </label>
+                  <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@example.com" required aria-required="true" aria-describedby="form-email-error">
+                  <span id="form-email-error" class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-subject" class="form-label">
+                    <span>Subject / Topic</span>
+                    <span style="color: var(--color-accent-green);">*</span>
+                  </label>
+                  <input type="text" id="form-subject" class="form-input" placeholder="e.g. Internship Inquiry / Project Discussion" required aria-required="true" aria-describedby="form-subject-error">
+                  <span id="form-subject-error" class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message" class="form-label">
+                    <span>Message</span>
+                    <span style="color: var(--color-accent-green);">*</span>
+                  </label>
+                  <textarea id="form-message" class="form-textarea" rows="4" placeholder="Detail your project or role requirements..." required aria-required="true" aria-describedby="form-message-error"></textarea>
+                  <span id="form-message-error" class="form-error" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;" data-cursor-label="DISPATCH">
+                  <span>Dispatch Message</span>
+                  <svg class="btn-icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <!-- Accessible Status Region -->
+                <div id="form-status-region" class="form-status-region" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer style="border-top: 1px solid var(--color-border-hairline); background-color: var(--color-bg-base); padding-block: var(--space-xl); position: relative; z-index: var(--z-content);" role="contentinfo">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-md);">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-block-end: 6px;">
+            <span class="pulsing-dot" aria-hidden="true"></span>
+            <span style="font-family: var(--font-mono); font-size: var(--text-mono-sm); font-weight: 700; color: #F4F6F8;">GANESH S // 2026</span>
+          </div>
+          <p style="font-size: var(--text-mono-xs); color: var(--color-text-muted);">
+            Computer Science Engineering Student • Aspiring Software Developer &amp; Future AI Engineer
+          </p>
+        </div>
+
+        <div style="display: flex; gap: var(--space-sm); align-items: center;">
+          <span style="font-family: var(--font-mono); font-size: var(--text-mono-xs); color: var(--color-text-muted);">
+            BUILT WITH CSS @LAYER • OKLCH • VANILLA JS
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       DETAIL MODAL (PROJECT ARCHITECTURE DEEP DIVE)
+       ================================================================ -->
+  <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog" role="document">
+      <button type="button" class="modal-close-btn" aria-label="Close project specifications dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div id="modal-dynamic-content">
+        <!-- Injected dynamically on card selection -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" aria-label="Back to top of page" data-cursor-label="TOP">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Application Bootstrap -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

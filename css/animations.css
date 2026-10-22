@@ -1,0 +1,247 @@
+/**
+ * ====================================================================
+ * ANIMATION SYSTEM - GANESH S PORTFOLIO
+ * ====================================================================
+ * Directional blur-to-sharp transitions, scroll-driven timelines,
+ * stroke draw animations, micro-interaction keyframes, and fallbacks.
+ */
+
+@layer animations {
+  /* ------------------------------------------------------------------
+     1. KEYFRAME DEFINITIONS
+     ------------------------------------------------------------------ */
+  /* Monogram SVG Stroke Draw */
+  @keyframes drawStroke {
+    0% {
+      stroke-dashoffset: 80;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Availability Pulsing Dot */
+  @keyframes pulseRing {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.9;
+    }
+    70% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+
+  /* Scroll Cue Arrow Bounce */
+  @keyframes scrollCueBounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(8px);
+    }
+    60% {
+      transform: translateY(4px);
+    }
+  }
+
+  /* Directional Blur-to-Sharp Text Reveal */
+  @keyframes blurToSharpReveal {
+    0% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(22px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade-In Up */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     2. HERO CHOREOGRAPHY
+     ------------------------------------------------------------------ */
+  /* Hero Headline Word/Char Clip Masks */
+  .reveal-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    margin-inline-end: 0.28em;
+  }
+
+  .reveal-word-inner {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(100%);
+    animation: blurToSharpReveal var(--dur-cinematic) var(--ease-out-expo) forwards;
+  }
+
+  /* Stagger delays for hero headline words */
+  .hero-title .reveal-word:nth-child(1) .reveal-word-inner { animation-delay: 0.15s; }
+  .hero-title .reveal-word:nth-child(2) .reveal-word-inner { animation-delay: 0.28s; }
+  .hero-title .reveal-word:nth-child(3) .reveal-word-inner { animation-delay: 0.42s; }
+
+  /* Hero Sub-elements entrance */
+  .hero-badge-wrap {
+    opacity: 0;
+    animation: fadeInUp var(--dur-slow) var(--ease-out-expo) forwards 0.1s;
+  }
+
+  .hero-title {
+    opacity: 0;
+    animation: fadeInUp var(--dur-slow) var(--ease-out-expo) forwards 0.28s;
+  }
+
+  .hero-bio {
+    opacity: 0;
+    animation: fadeInUp var(--dur-slow) var(--ease-out-expo) forwards 0.45s;
+  }
+
+  .hero-actions {
+    opacity: 0;
+    animation: fadeInUp var(--dur-slow) var(--ease-out-expo) forwards 0.62s;
+  }
+
+  .hero-scroll-cue {
+    animation: scrollCueBounce 2.4s ease-in-out infinite;
+    transition: opacity var(--dur-base) var(--ease-smooth);
+  }
+
+  .hero-scroll-cue.is-scrolled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ------------------------------------------------------------------
+     3. SCROLL REVEAL UTILITIES (JS Intersection Observer & Fallback)
+     ------------------------------------------------------------------ */
+  .reveal-on-scroll {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(32px);
+    transition: opacity var(--dur-slow) var(--ease-out-expo),
+                filter var(--dur-slow) var(--ease-out-expo),
+                transform var(--dur-slow) var(--ease-out-expo);
+    will-change: opacity, filter, transform;
+  }
+
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+
+  /* Stagger classes for grid children */
+  .stagger-1 { transition-delay: 0.08s; }
+  .stagger-2 { transition-delay: 0.16s; }
+  .stagger-3 { transition-delay: 0.24s; }
+  .stagger-4 { transition-delay: 0.32s; }
+  .stagger-5 { transition-delay: 0.40s; }
+
+  /* ------------------------------------------------------------------
+     4. PROGRESSIVE ENHANCEMENT: CSS SCROLL-DRIVEN ANIMATIONS
+     ------------------------------------------------------------------ */
+  @supports (animation-timeline: scroll()) {
+    .scroll-progress-bar {
+      animation: growProgressBar auto linear;
+      animation-timeline: scroll(root block);
+    }
+
+    @keyframes growProgressBar {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  @supports (animation-timeline: view()) {
+    /* Optional progressive enhancement for card view entry in supporting browsers */
+    .view-fade-entry {
+      animation: viewFadeIn auto var(--ease-out-expo) both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+
+    @keyframes viewFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     5. CONTINUOUS FLOATING SKILL LOGOS & REVERSE SHADOW PULSE
+     ------------------------------------------------------------------ */
+  @keyframes logoFloat {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(0, calc(-1 * var(--float-dist, 8px)), 0) rotate(var(--float-rot, 1.5deg));
+    }
+  }
+
+  @keyframes logoShadowPulse {
+    0% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateX(-50%) scale(1.25);
+      opacity: 0.35;
+    }
+  }
+
+  /* Default paused until viewport intersection */
+  .floating-logo-img {
+    animation: logoFloat var(--float-dur, 5s) ease-in-out infinite alternate;
+    animation-delay: var(--float-delay, 0s);
+    animation-play-state: paused;
+  }
+
+  .logo-shadow {
+    animation: logoShadowPulse var(--float-dur, 5s) ease-in-out infinite alternate;
+    animation-delay: var(--float-delay, 0s);
+    animation-play-state: paused;
+  }
+
+  /* When #skills is in viewport, activate continuous floating motion */
+  .skills-section.is-animating .floating-logo-img,
+  #skills.is-animating .floating-logo-img {
+    animation-play-state: running;
+  }
+
+  .skills-section.is-animating .logo-shadow,
+  #skills.is-animating .logo-shadow {
+    animation-play-state: running;
+  }
+}
+
